@@ -14,7 +14,6 @@ def largestFile(url, max_size=0, largest_file=""):
             max_size, largest_file = largestFile(item, max_size, largest_file)
     return max_size, largest_file
 
-if __name__ == "__main__":
-    max_file, large_file_path = largestFile(url)
-    print(max_file, large_file_path)
+max_file, large_file_path = largestFile(url)
+print(max_file, large_file_path)
 
