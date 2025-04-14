@@ -1,0 +1,35 @@
+import requests
+from bs4 import BeautifulSoup
+import asyncio
+
+file = "./new_file.txt"
+
+async def get_links(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    links = set()
+    for link in soup.find_all('a', href = True):
+        href = link['href']
+        if href.startswith(('http://', 'https://')):
+            links.add(href)
+        elif href.startswith('/'):
+            absolute_url = requests.compat.urljoin(url, href)
+            links.add(absolute_url)
+    return list(links)
+        
+async def write_links(links, filename):
+    with open(filename, 'w') as f:
+        for link in links:
+            f.write(link + '\n')
+    print(f"Successfully wrote {len(links)} links to {filename}")
+    
+async def process(url):
+    return await get_links(url)
+
+async def main():
+    target = "https://www.youtube.com"
+    result = await process(target)
+    await write_links(result,file)
+
+if __name__ == "__main__":
+    asyncio.run(main())
