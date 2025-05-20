@@ -11,9 +11,11 @@ from langchain_core.runnables import RunnableWithMessageHistory
 from langchain_core.output_parsers import StrOutputParser
 from flask_cors import CORS
 from langchain.schema import BaseChatMessageHistory, HumanMessage, AIMessage
+from dotenv import load_dotenv 
 
 #MISTRAL_API_KEY = os.environ.get("MISTRAL_API_KEY") 
-MISTRAL_API_KEY = "mejDxGzjfXca6Shfa96ypnzrluTim5bo"
+load_dotenv()
+
 
 app = Flask(__name__)
 CORS(app)  
