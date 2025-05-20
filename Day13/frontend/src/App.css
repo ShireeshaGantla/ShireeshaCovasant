@@ -1,0 +1,177 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* styles.css */
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#chat-area {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  height: 300px; /* Adjust as needed */
+  overflow-y: auto;
+}
+
+#chat-area div {
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+#chat-area div:last-child {
+  border-bottom: none;
+}
+
+#chat-area div strong {
+  font-weight: bold;
+  color: #555;
+  margin-right: 5px;
+}
+
+#chat-area div.user {
+  text-align: right;
+  color: #007bff; /* User message color */
+}
+
+#chat-area div.assistant {
+  text-align: left;
+  color: #28a745; /* Assistant message color */
+}
+
+#user-input {
+  width: calc(100% - 90px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+#send-button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#send-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 600px) {
+  #user-input {
+    width: calc(100% - 70px);
+  }
+
+  #send-button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+.input-container {
+  display: flex;
+  align-items: center; /* Vertically align items in the container */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden; /* To contain rounded borders of input and button */
+}
+
+#user-input {
+  width: calc(100% - 70px); /* Adjust width to accommodate button */
+  padding: 10px;
+  border: none; /* Remove default input border */
+  border-radius: 5px 0 0 5px; /* Left rounded corners */
+  font-size: 16px;
+  flex-grow: 1; /* Allow input to grow and take available space */
+}
+
+#user-input:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+#send-button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0 5px 5px 0; /* Right rounded corners */
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#send-button:hover {
+  background-color: #0056b3;
+}
+
+/* Adjust responsive styles for the new layout */
+@media (max-width: 600px) {
+  .input-container {
+    flex-direction: column; /* Stack input and button on smaller screens */
+  }
+
+  #user-input {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  #send-button {
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+  }
+}
